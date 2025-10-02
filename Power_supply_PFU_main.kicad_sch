@@ -496,6 +496,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 99.06) (xy 138.43 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1540e15b-81d6-48d8-9e88-f08819013ed6")
+	)
+	(wire
+		(pts
 			(xy 55.88 27.94) (xy 59.69 27.94)
 		)
 		(stroke
@@ -536,6 +546,16 @@
 	)
 	(wire
 		(pts
+			(xy 67.31 99.06) (xy 138.43 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae43e97c-eeee-4e6c-996e-015114d5c3c0")
+	)
+	(wire
+		(pts
 			(xy 34.29 31.75) (xy 33.02 31.75)
 		)
 		(stroke
@@ -543,6 +563,16 @@
 			(type default)
 		)
 		(uuid "b747c9ab-5078-4681-9313-25880cd53a14")
+	)
+	(wire
+		(pts
+			(xy 138.43 73.66) (xy 171.45 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc985540-0f32-4533-b772-52fed4ac8c1c")
 	)
 	(wire
 		(pts
@@ -684,7 +714,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "648fdcc2-0475-49c2-b78f-3341e3b29541")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR?"
 			(at 38.1 41.91 0)
 			(effects
 				(font
@@ -732,6 +762,12 @@
 			(uuid "9421e47f-57d9-47bf-8a7b-42dd4b37f223")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR01")
@@ -750,7 +786,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6510fa68-0f07-4076-9631-de6586a0b49a")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR?"
 			(at 59.69 27.94 0)
 			(effects
 				(font
@@ -799,6 +835,12 @@
 			(uuid "e0d1d4a5-a7ca-45fc-bb25-95451168ae7c")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR05")
@@ -817,7 +859,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "850961d3-969d-41e2-98f4-6a4829de5cb7")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR?"
 			(at 59.69 31.75 0)
 			(effects
 				(font
@@ -866,6 +908,12 @@
 			(uuid "38cb9753-9c47-4c53-a9e4-1077375742bc")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR04")
@@ -884,7 +932,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d5abab46-d1cd-4b2d-b69c-2e304b98d49e")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR?"
 			(at 54.61 43.18 0)
 			(effects
 				(font
@@ -932,6 +980,12 @@
 			(uuid "d08d631c-49df-48af-9e8f-8557345262ce")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR02")
@@ -940,4 +994,10 @@
 			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
