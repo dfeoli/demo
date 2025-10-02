@@ -5,6 +5,393 @@
 	(uuid "82539c6a-c35d-43cd-a39f-64e847c1536b")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Amplifier_Operational:ADA4610-4xR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "ADA4610-4xR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/ADA4610-1_4610-2_4610-4.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Quad Low Noise, Precision, Rail-to-Rail Output, JFET Single Op Amp, SOIC-14"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "quad opamp low-power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x8.7mm*P1.27mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ADA4610-4xR_1_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ADA4610-4xR_2_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ADA4610-4xR_3_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ADA4610-4xR_4_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ADA4610-4xR_5_1"
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+24V"
 			(power)
 			(pin_numbers
@@ -684,7 +1071,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "648fdcc2-0475-49c2-b78f-3341e3b29541")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR?"
 			(at 38.1 41.91 0)
 			(effects
 				(font
@@ -732,6 +1119,12 @@
 			(uuid "9421e47f-57d9-47bf-8a7b-42dd4b37f223")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR01")
@@ -750,7 +1143,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6510fa68-0f07-4076-9631-de6586a0b49a")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR?"
 			(at 59.69 27.94 0)
 			(effects
 				(font
@@ -799,6 +1192,12 @@
 			(uuid "e0d1d4a5-a7ca-45fc-bb25-95451168ae7c")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR05")
@@ -817,7 +1216,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "850961d3-969d-41e2-98f4-6a4829de5cb7")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR?"
 			(at 59.69 31.75 0)
 			(effects
 				(font
@@ -866,9 +1265,119 @@
 			(uuid "38cb9753-9c47-4c53-a9e4-1077375742bc")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:ADA4610-4xR")
+		(at 191.77 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5a9d017-7168-46ba-a9d6-f4c984298524")
+		(property "Reference" "U1"
+			(at 191.77 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ADA4610-4xR"
+			(at 191.77 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+			(at 191.77 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/ADA4610-1_4610-2_4610-4.pdf"
+			(at 191.77 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Quad Low Noise, Precision, Rail-to-Rail Output, JFET Single Op Amp, SOIC-14"
+			(at 191.77 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "56498910-9dff-4668-a3ee-7bbcb8dc1f11")
+		)
+		(pin "3"
+			(uuid "c1dc645a-38db-4855-8ebf-ba78fabb1c1e")
+		)
+		(pin "1"
+			(uuid "a1195390-7b45-48bc-8da5-fb57cc54b39f")
+		)
+		(pin "5"
+			(uuid "b884f6c9-3ba2-4484-a43a-861b7303764b")
+		)
+		(pin "6"
+			(uuid "59b976c1-d461-4ab5-87ef-72d722171136")
+		)
+		(pin "7"
+			(uuid "9d8da7d2-8ce5-43e7-a33c-6beefb8d0322")
+		)
+		(pin "10"
+			(uuid "6db2c237-03a7-4055-a1e9-94a0221ae8dd")
+		)
+		(pin "8"
+			(uuid "e04f968a-baf7-47ac-a202-c9ab1d293797")
+		)
+		(pin "12"
+			(uuid "e0e979e6-3435-47f8-b447-bdba5be9f4c3")
+		)
+		(pin "13"
+			(uuid "3dc25aeb-2352-4215-837b-f0a8e9bc4da5")
+		)
+		(pin "14"
+			(uuid "39304cee-e413-42a3-a33e-48d2aeb95bf3")
+		)
+		(pin "9"
+			(uuid "a054f515-91eb-41e4-8659-01c192e1a6a5")
+		)
+		(pin "4"
+			(uuid "0ca37fb9-25f5-4b2c-87f7-0883f6162a80")
+		)
+		(pin "11"
+			(uuid "966aee68-224e-425e-aaf7-4cb2de9aff9d")
+		)
+		(instances
+			(project ""
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -884,7 +1393,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d5abab46-d1cd-4b2d-b69c-2e304b98d49e")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR?"
 			(at 54.61 43.18 0)
 			(effects
 				(font
@@ -932,6 +1441,12 @@
 			(uuid "d08d631c-49df-48af-9e8f-8557345262ce")
 		)
 		(instances
+			(project "Power_supply_PFU_main"
+				(path "/82539c6a-c35d-43cd-a39f-64e847c1536b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "HW_HTB_PFU_MAIN"
 				(path "/8502ea7d-f2d8-4443-99aa-8c64d27b64f2/8af84ec4-f9ff-4e86-b3d8-160fe4617c9c"
 					(reference "#PWR02")
@@ -940,4 +1455,10 @@
 			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
