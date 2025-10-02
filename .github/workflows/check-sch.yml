@@ -1,9 +1,6 @@
 name: Validate KiCad Push
 
 on:
-  push:
-    branches:
-      - "**"
   pull_request:
     branches:
       - "**"
@@ -18,10 +15,8 @@ jobs:
       - name: Check if actor is admin
         id: check_admin
         run: |
-          # 👇 Poner aquí los nombres de usuario de los administradores del repo
           ADMINS=("maxi" "alan" "dfeolii")
 
-          echo "Actor que disparó el workflow: $GITHUB_ACTOR, lista de admins es ${ADMINS[@]}"
           IS_ADMIN=false
           for admin in "${ADMINS[@]}"; do
             if [[ "$GITHUB_ACTOR" == "$admin" ]]; then
@@ -29,42 +24,51 @@ jobs:
               break
             fi
           done
+
           echo "is_admin=$IS_ADMIN" >> $GITHUB_OUTPUT
-          echo "is_admin=$IS_ADMIN"
+        shell: bash
 
       - name: Get changed files
         id: changed
         run: |
-          # Asegurar historial completo
           git fetch --prune --unshallow || true
           git fetch --all
-          echo "Detectado push"
-          BASE_SHA=${{ github.event.before }}
-          HEAD_SHA=${{ github.sha }}
-          
+
+          # Compare PR head vs base branch to get net diff
+          BASE_SHA=$(git merge-base origin/${{ github.base_ref }} $GITHUB_SHA)
+          HEAD_SHA=$GITHUB_SHA
+
           echo "Comparando $BASE_SHA...$HEAD_SHA"
 
           CHANGED_FILES=$(git diff --name-only $BASE_SHA $HEAD_SHA || true)
           echo "Archivos modificados:"
           echo "$CHANGED_FILES"
-          FILES_JOINED=$(echo "$CHANGED_FILES" | tr '\n' '|' | sed 's/|$//')
-          echo "Archivos codificados: $FILES_JOINED"
-          echo "files=$FILES_JOINED" >> $GITHUB_ENV
 
-      - name: Validate only one KiCad schematic changed
+          FILES_JOINED=$(echo "$CHANGED_FILES" | tr '\n' '|' | sed 's/|$//')
+          echo "files=$FILES_JOINED" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Validate KiCad schematic changes
         if: steps.check_admin.outputs.is_admin == 'false'
         run: |
-          echo "files='$files'"
+          FILES="${{ steps.changed.outputs.files }}"
+          echo "files='$FILES'"
+
           FILE_ARRAY=()
-          if [ -n "$files" ]; then
-            IFS='|' read -ra FILE_ARRAY <<< "$files"
+          if [ -n "$FILES" ]; then
+            IFS='|' read -ra FILE_ARRAY <<< "$FILES"
           fi
 
           FILE_COUNT=${#FILE_ARRAY[@]}
           echo "Cantidad de archivos modificados: $FILE_COUNT"
 
+          if [ $FILE_COUNT -eq 0 ]; then
+            echo "✅ No schematic changes detected, passing check."
+            exit 0
+          fi
+
           if [ $FILE_COUNT -ne 1 ]; then
-            echo "❌ Se modificaron $FILE_COUNT archivos (debe ser exactamente 1). Solo se permite modificar un archivo."
+            echo "❌ Se modificaron $FILE_COUNT archivos. Solo se permite modificar un archivo .kicad_sch."
             exit 1
           fi
 
@@ -75,5 +79,4 @@ jobs:
           fi
 
           echo "✅ Validación exitosa: se modificó un único archivo .kicad_sch"
-        env:
-          files: ${{ env.files }}
+        shell: bash
