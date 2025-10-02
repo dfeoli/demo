@@ -1,0 +1,79 @@
+name: Validate KiCad Push
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  validate-kicad-sch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check if actor is admin
+        id: check_admin
+        run: |
+          # 👇 Poner aquí los nombres de usuario de los administradores del repo
+          ADMINS=("maxi" "alan" "dfeolii")
+
+          echo "Actor que disparó el workflow: $GITHUB_ACTOR, lista de admins es ${ADMINS[@]}"
+          IS_ADMIN=false
+          for admin in "${ADMINS[@]}"; do
+            if [[ "$GITHUB_ACTOR" == "$admin" ]]; then
+              IS_ADMIN=true
+              break
+            fi
+          done
+          echo "is_admin=$IS_ADMIN" >> $GITHUB_OUTPUT
+          echo "is_admin=$IS_ADMIN"
+
+      - name: Get changed files
+        id: changed
+        run: |
+          # Asegurar historial completo
+          git fetch --prune --unshallow || true
+          git fetch --all
+          echo "Detectado push"
+          BASE_SHA=${{ github.event.before }}
+          HEAD_SHA=${{ github.sha }}
+          
+          echo "Comparando $BASE_SHA...$HEAD_SHA"
+
+          CHANGED_FILES=$(git diff --name-only $BASE_SHA $HEAD_SHA || true)
+          echo "Archivos modificados:"
+          echo "$CHANGED_FILES"
+          FILES_JOINED=$(echo "$CHANGED_FILES" | tr '\n' '|' | sed 's/|$//')
+          echo "Archivos codificados: $FILES_JOINED"
+          echo "files=$FILES_JOINED" >> $GITHUB_ENV
+
+      - name: Validate only one KiCad schematic changed
+        if: steps.check_admin.outputs.is_admin == 'false'
+        run: |
+          echo "files='$files'"
+          FILE_ARRAY=()
+          if [ -n "$files" ]; then
+            IFS='|' read -ra FILE_ARRAY <<< "$files"
+          fi
+
+          FILE_COUNT=${#FILE_ARRAY[@]}
+          echo "Cantidad de archivos modificados: $FILE_COUNT"
+
+          if [ $FILE_COUNT -ne 1 ]; then
+            echo "❌ Se modificaron $FILE_COUNT archivos (debe ser exactamente 1). Solo se permite modificar un archivo."
+            exit 1
+          fi
+
+          FILE="${FILE_ARRAY[0]}"
+          if [[ ! "$FILE" =~ \.kicad_sch$ ]]; then
+            echo "❌ El archivo modificado no tiene extensión .kicad_sch"
+            exit 1
+          fi
+
+          echo "✅ Validación exitosa: se modificó un único archivo .kicad_sch"
+        env:
+          files: ${{ env.files }}
